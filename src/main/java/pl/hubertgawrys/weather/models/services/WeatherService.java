@@ -76,7 +76,7 @@ public class WeatherService {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                String websiteResponse = Utils.readWebsiteContent("http://api.openweathermap.org/data/2.5/forecast?q=" + city + ",pl&APPID=b874d92729c25067bab28bf23ee81698");
+                String websiteResponse = Utils.readWebsiteContent("http://api.openweathermap.org/data/2.5/forecast?q=" + city + "");
                 String description = null;
                 int temperature;
                 int pressure;
@@ -120,7 +120,7 @@ public class WeatherService {
                 double value = 0;
                 double precision = 0;
                 int pressure = 0;
-                String placeResponse = Utils.readWebsiteContent("https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&key=AIzaSyDjHrI-Z8bgYgW8L4-cKWdAKLRPkybP0b8");
+                String placeResponse = Utils.readWebsiteContent("https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "");
                 // GETTING LOCATION FROM GOOGLE API
                 JSONObject root = new JSONObject(placeResponse);
                 JSONArray resultsArray = root.getJSONArray("results");
