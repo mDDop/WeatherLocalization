@@ -39,7 +39,7 @@ public class WeatherService {
         executorService.execute(new Runnable() {
             @Override
             public void run() {
-                String websiteResponse = Utils.readWebsiteContent("http://api.openweathermap.org/data/2.5/weather?q=" + city + ",PL&APPID=b874d92729c25067bab28bf23ee81698");
+                String websiteResponse = Utils.readWebsiteContent("http://api.openweathermap.org/data/2.5/weather?q=" + city + "");
                 String description = null;
                 int temperature;
                 int pressure;
